@@ -135,8 +135,10 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         txtCantidad = new javax.swing.JTextField();
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("MANTENIMIENTO DE USUARIOS");
 
         jLabel1.setText("DNI");
 
@@ -270,7 +272,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
         jLabel8.setText("TIENDA");
 
-        cmbTienda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TIENDA 1", "TIENDA 2", "TIENDA 3", "TIENDA 4" }));
+        cmbTienda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TIENDA" }));
         cmbTienda.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 cmbTiendaFocusGained(evt);

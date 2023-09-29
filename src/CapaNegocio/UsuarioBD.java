@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,8 +24,8 @@ public class UsuarioBD {
     private Conexion mysql = new Conexion();
     private Connection cn = mysql.conectar();
     private String sql;
-    
-      public DefaultTableModel reportarUsuario() {
+
+    public DefaultTableModel reportarUsuario() {
         DefaultTableModel tabla_temporal;
         String[] titulos = {"DNI", "NOMBRES", "APELLIDOS", "DIRECCION", "CLAVE", "CELULAR", "TIPO_USUARIO", "TIENDA"};
         String[] registros = new String[8];
@@ -147,8 +149,7 @@ public class UsuarioBD {
         }
         return tabla_temporal;
     }
-    
-    
+
     public DefaultTableModel buscarUsuarioXdni(String dni) {
         DefaultTableModel tabla_temporal;
         String[] titulos = {"DNI", "NOMBRES", "APELLIDOS", "DIRECCION", "CLAVE", "CELULAR", "TIPO_USUARIO", "TIENDA"};
@@ -160,7 +161,7 @@ public class UsuarioBD {
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
             pst.setString(1, dni);
-            
+
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
                 registros[0] = rs.getString("uDni");
@@ -179,6 +180,36 @@ public class UsuarioBD {
             return null;
         }
         return tabla_temporal;
+    }
+
+    public List<Usuario> login(String dni, String clave) {
+        List<Usuario> lista = new ArrayList<>();
+        sql = "SELECT uDni,uNombre,uApellido,uDireccion,uClave,uCelular,idtipousuario,tienda  FROM usuario "
+                + "WHERE uDni=? AND uClave=?";
+        try {
+            PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, dni);
+            pst.setString(2, clave);
+
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                Usuario oUsuario = new Usuario();
+                oUsuario.setuDni(rs.getString(1));
+                oUsuario.setuNombre(rs.getString(2));
+                oUsuario.setuApellido(rs.getString(3));
+                oUsuario.setuDireccion(rs.getString(4));
+                oUsuario.setuClave(rs.getString(5));
+                oUsuario.setuCelular(rs.getString(6));
+                oUsuario.setuTipo(rs.getInt(7));
+                oUsuario.setTienda(rs.getString(8));
+                lista.add(oUsuario);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e, "Error en el LOGIN", JOptionPane.ERROR_MESSAGE);
+
+        }
+        return lista;
     }
 
 }

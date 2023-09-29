@@ -44,14 +44,20 @@ public class Menu_IU extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JToolBar.Separator();
         btnCerrar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mantenimiento_Item_USuario = new javax.swing.JMenu();
+        menu_mantenimiento = new javax.swing.JMenu();
         Mantenimiento_Item_TipoUsuario = new javax.swing.JMenuItem();
         Mantenimiento_Item_Usuario = new javax.swing.JMenuItem();
         Mantenimiento_Item_Turno = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
+        Mantenimiento_Item_marca = new javax.swing.JMenuItem();
+        Mantenimiento_Item_Categoria = new javax.swing.JMenuItem();
+        mantenimiento_Item_Medida = new javax.swing.JMenuItem();
+        mantenimiento_Item_Producto = new javax.swing.JMenuItem();
+        mantenimiento_Item_Composicion = new javax.swing.JMenuItem();
+        menu_compras = new javax.swing.JMenu();
+        menu_inventario = new javax.swing.JMenu();
+        menu_ventas = new javax.swing.JMenu();
+        menu_caja = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -60,6 +66,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
 
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/CAJACARTON_32.png"))); // NOI18N
+        btnProductos.setEnabled(false);
         btnProductos.setFocusable(false);
         btnProductos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnProductos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -67,6 +74,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(jSeparator1);
 
         btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/compra.png"))); // NOI18N
+        btnCompras.setEnabled(false);
         btnCompras.setFocusable(false);
         btnCompras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCompras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -74,6 +82,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(jSeparator2);
 
         btnIngresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/ingresos.png"))); // NOI18N
+        btnIngresos.setEnabled(false);
         btnIngresos.setFocusable(false);
         btnIngresos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnIngresos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -81,6 +90,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(jSeparator3);
 
         btnEgresos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/egresos.png"))); // NOI18N
+        btnEgresos.setEnabled(false);
         btnEgresos.setFocusable(false);
         btnEgresos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEgresos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -88,6 +98,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(jSeparator4);
 
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/VENTAS_32.png"))); // NOI18N
+        btnVentas.setEnabled(false);
         btnVentas.setFocusable(false);
         btnVentas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVentas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -95,6 +106,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(jSeparator5);
 
         btnCaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_Proyecto/CAJA_32.png"))); // NOI18N
+        btnCaja.setEnabled(false);
         btnCaja.setFocusable(false);
         btnCaja.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCaja.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -122,10 +134,10 @@ public class Menu_IU extends javax.swing.JFrame {
                 .addGap(0, 436, Short.MAX_VALUE))
         );
 
-        mantenimiento_Item_USuario.setText("MANTENIMIENTO");
-        mantenimiento_Item_USuario.addActionListener(new java.awt.event.ActionListener() {
+        menu_mantenimiento.setText("MANTENIMIENTO");
+        menu_mantenimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimiento_Item_USuarioActionPerformed(evt);
+                menu_mantenimientoActionPerformed(evt);
             }
         });
 
@@ -135,7 +147,7 @@ public class Menu_IU extends javax.swing.JFrame {
                 Mantenimiento_Item_TipoUsuarioActionPerformed(evt);
             }
         });
-        mantenimiento_Item_USuario.add(Mantenimiento_Item_TipoUsuario);
+        menu_mantenimiento.add(Mantenimiento_Item_TipoUsuario);
 
         Mantenimiento_Item_Usuario.setText("USUARIO");
         Mantenimiento_Item_Usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +155,7 @@ public class Menu_IU extends javax.swing.JFrame {
                 Mantenimiento_Item_UsuarioActionPerformed(evt);
             }
         });
-        mantenimiento_Item_USuario.add(Mantenimiento_Item_Usuario);
+        menu_mantenimiento.add(Mantenimiento_Item_Usuario);
 
         Mantenimiento_Item_Turno.setText("TURNO");
         Mantenimiento_Item_Turno.addActionListener(new java.awt.event.ActionListener() {
@@ -151,21 +163,66 @@ public class Menu_IU extends javax.swing.JFrame {
                 Mantenimiento_Item_TurnoActionPerformed(evt);
             }
         });
-        mantenimiento_Item_USuario.add(Mantenimiento_Item_Turno);
+        menu_mantenimiento.add(Mantenimiento_Item_Turno);
+        menu_mantenimiento.add(jSeparator7);
 
-        jMenuBar1.add(mantenimiento_Item_USuario);
+        Mantenimiento_Item_marca.setText("LABORATORIO");
+        Mantenimiento_Item_marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mantenimiento_Item_marcaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(Mantenimiento_Item_marca);
 
-        jMenu2.setText("COMPRAS");
-        jMenuBar1.add(jMenu2);
+        Mantenimiento_Item_Categoria.setText("CATEGORIA");
+        Mantenimiento_Item_Categoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mantenimiento_Item_CategoriaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(Mantenimiento_Item_Categoria);
 
-        jMenu3.setText("INVENTARIO");
-        jMenuBar1.add(jMenu3);
+        mantenimiento_Item_Medida.setText("MEDIDA");
+        mantenimiento_Item_Medida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mantenimiento_Item_MedidaActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(mantenimiento_Item_Medida);
 
-        jMenu4.setText("VENTAS");
-        jMenuBar1.add(jMenu4);
+        mantenimiento_Item_Producto.setText("PRODUCTO");
+        mantenimiento_Item_Producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mantenimiento_Item_ProductoActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(mantenimiento_Item_Producto);
 
-        jMenu5.setText("CAJA");
-        jMenuBar1.add(jMenu5);
+        mantenimiento_Item_Composicion.setText("COMPOSICION");
+        mantenimiento_Item_Composicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mantenimiento_Item_ComposicionActionPerformed(evt);
+            }
+        });
+        menu_mantenimiento.add(mantenimiento_Item_Composicion);
+
+        jMenuBar1.add(menu_mantenimiento);
+
+        menu_compras.setText("COMPRAS");
+        menu_compras.setEnabled(false);
+        jMenuBar1.add(menu_compras);
+
+        menu_inventario.setText("INVENTARIO");
+        menu_inventario.setEnabled(false);
+        jMenuBar1.add(menu_inventario);
+
+        menu_ventas.setText("VENTAS");
+        menu_ventas.setEnabled(false);
+        jMenuBar1.add(menu_ventas);
+
+        menu_caja.setText("CAJA");
+        menu_caja.setEnabled(false);
+        jMenuBar1.add(menu_caja);
 
         setJMenuBar(jMenuBar1);
 
@@ -183,9 +240,9 @@ public class Menu_IU extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mantenimiento_Item_USuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimiento_Item_USuarioActionPerformed
+    private void menu_mantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_mantenimientoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mantenimiento_Item_USuarioActionPerformed
+    }//GEN-LAST:event_menu_mantenimientoActionPerformed
 
     private void Mantenimiento_Item_TipoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mantenimiento_Item_TipoUsuarioActionPerformed
         // TODO add your handling code here:
@@ -216,6 +273,56 @@ public class Menu_IU extends javax.swing.JFrame {
         frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
         frame.show();
     }//GEN-LAST:event_Mantenimiento_Item_TurnoActionPerformed
+
+    private void Mantenimiento_Item_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mantenimiento_Item_marcaActionPerformed
+        // TODO add your handling code here:
+        Marca_IU frame = new Marca_IU();
+        escritorio.add(frame);
+        Dimension deskopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
+        frame.show();
+    }//GEN-LAST:event_Mantenimiento_Item_marcaActionPerformed
+
+    private void Mantenimiento_Item_CategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mantenimiento_Item_CategoriaActionPerformed
+        // TODO add your handling code here:
+        Categoria_IU frame = new Categoria_IU();
+        escritorio.add(frame);
+        Dimension deskopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
+        frame.show();
+    }//GEN-LAST:event_Mantenimiento_Item_CategoriaActionPerformed
+
+    private void mantenimiento_Item_MedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimiento_Item_MedidaActionPerformed
+        // TODO add your handling code here:
+        Medida_IU frame = new Medida_IU();
+        escritorio.add(frame);
+        Dimension deskopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
+        frame.show();
+    }//GEN-LAST:event_mantenimiento_Item_MedidaActionPerformed
+
+    private void mantenimiento_Item_ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimiento_Item_ProductoActionPerformed
+        // TODO add your handling code here:
+        Producto_IU frame = new Producto_IU();
+        escritorio.add(frame);
+        Dimension deskopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
+        frame.show();
+    }//GEN-LAST:event_mantenimiento_Item_ProductoActionPerformed
+
+    private void mantenimiento_Item_ComposicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimiento_Item_ComposicionActionPerformed
+        // TODO add your handling code here:
+        Composicion_IU frame = new Composicion_IU();
+        escritorio.add(frame);
+        Dimension deskopSize = escritorio.getSize();
+        Dimension FrameSize = frame.getSize();
+        frame.setLocation((deskopSize.width - FrameSize.width) / 2, (deskopSize.height - FrameSize.height) / 2);
+        frame.show();
+    }//GEN-LAST:event_mantenimiento_Item_ComposicionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,21 +360,19 @@ public class Menu_IU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Mantenimiento_Item_Categoria;
     private javax.swing.JMenuItem Mantenimiento_Item_TipoUsuario;
     private javax.swing.JMenuItem Mantenimiento_Item_Turno;
     private javax.swing.JMenuItem Mantenimiento_Item_Usuario;
-    private javax.swing.JButton btnCaja;
-    private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnCompras;
-    private javax.swing.JButton btnEgresos;
-    private javax.swing.JButton btnIngresos;
-    private javax.swing.JButton btnProductos;
-    private javax.swing.JButton btnVentas;
-    private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuItem Mantenimiento_Item_marca;
+    public static javax.swing.JButton btnCaja;
+    public static javax.swing.JButton btnCerrar;
+    public static javax.swing.JButton btnCompras;
+    public static javax.swing.JButton btnEgresos;
+    public static javax.swing.JButton btnIngresos;
+    public static javax.swing.JButton btnProductos;
+    public static javax.swing.JButton btnVentas;
+    public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
@@ -275,7 +380,15 @@ public class Menu_IU extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JMenu mantenimiento_Item_USuario;
+    private javax.swing.JMenuItem mantenimiento_Item_Composicion;
+    private javax.swing.JMenuItem mantenimiento_Item_Medida;
+    private javax.swing.JMenuItem mantenimiento_Item_Producto;
+    public static javax.swing.JMenu menu_caja;
+    public static javax.swing.JMenu menu_compras;
+    public static javax.swing.JMenu menu_inventario;
+    public static javax.swing.JMenu menu_mantenimiento;
+    public static javax.swing.JMenu menu_ventas;
     // End of variables declaration//GEN-END:variables
 }

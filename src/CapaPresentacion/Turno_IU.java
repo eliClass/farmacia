@@ -115,8 +115,10 @@ public class Turno_IU extends javax.swing.JInternalFrame {
         btnCerrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("TURNO");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("DATOS DEL USUARIO"));
 

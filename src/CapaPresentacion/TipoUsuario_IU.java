@@ -83,6 +83,7 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("TIPO DE USUARIOS");
