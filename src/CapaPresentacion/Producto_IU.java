@@ -824,7 +824,7 @@ public class Producto_IU extends javax.swing.JInternalFrame {
                 tabla_reporte_producto.setModel(tabla_temporal_producto);
 
             } else {
-                JOptionPane.showConfirmDialog(this, "No se encontro el producto");
+                JOptionPane.showMessageDialog(this, "No se encontro el producto");
                 txtSerie.requestFocus();
             }
 

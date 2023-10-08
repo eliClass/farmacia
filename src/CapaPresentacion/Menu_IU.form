@@ -7,6 +7,7 @@
         <Menu class="javax.swing.JMenu" name="menu_mantenimiento">
           <Properties>
             <Property name="text" type="java.lang.String" value="MANTENIMIENTO"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_mantenimientoActionPerformed"/>
@@ -81,6 +82,24 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mantenimiento_Item_ComposicionActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator8">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mantenimiento_Item_Proveedor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="PROVEEDOR"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mantenimiento_Item_ProveedorActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mantenimiento_Item_CuentasBancarias">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CUENTAS BANCARIAS"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mantenimiento_Item_CuentasBancariasActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menu_compras">
@@ -91,6 +110,24 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="compras_Item_RealizarCompras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REALIZAR COMPRA"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compras_Item_RealizarComprasActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="compras_Item_ReporteVarios">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="REPORTE DE COMPRAS VARIAS"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compras_Item_ReporteVariosActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menu_inventario">
           <Properties>
